@@ -1,0 +1,28 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: booking-service
+spec:
+  host: booking-service
+  trafficPolicy:
+    # Circuit Breaking
+    connectionPool:
+      tcp:
+        maxConnections: 100
+      http:
+        http1MaxPendingRequests: 50
+        maxRequestsPerConnection: 10
+    # Outlier Detection (Fallback)
+    outlierDetection:
+      consecutive5xxErrors: 3
+      consecutiveGatewayErrors: 2
+      interval: 5s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2

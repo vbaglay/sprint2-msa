@@ -1,0 +1,29 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  IMAGE_NAME: booking-service
+  HELM_RELEASE: booking-service
+
+build:
+  stage: build
+  script:
+    - docker build -t $IMAGE_NAME:latest ./booking-service
+
+test:
+  stage: test
+  script:
+    - docker rm -f test-container || true
+    - docker run -d --name test-container -p 8080:8080 $IMAGE_NAME:latest
+    - sleep 3
+    - curl -f http://localhost:8080/ping
+    - docker stop test-container
+
+deploy:
+  stage: deploy
+  script:
+    - minikube image load $IMAGE_NAME:latest
+    - helm upgrade --install $HELM_RELEASE ./helm/booking-service --set image.tag=latest --set image.pullPolicy=Never
+    - echo "✅ Deployed with Helm"

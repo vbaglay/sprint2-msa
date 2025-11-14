@@ -1,0 +1,18 @@
+boss@tata:/mnt/c/Users/boss/Documents/Yandex/Sprint2/msa-sprint2/tasks/task4$ kubectl get pods
+NAME                                     READY   STATUS             RESTARTS   AGE
+booking-service-6766cd5f7c-qtcwl         1/1     Running            0          26m
+booking-service-dev-7bbb6c68cc-7b2zf     1/1     Running            0          83m
+booking-service-prod-c467d5567-dq4xv     0/1     ImagePullBackOff   0          83m
+booking-service-prod-c467d5567-kqvhw     0/1     ImagePullBackOff   0          83m
+booking-service-prod-c467d5567-qcthk     0/1     ImagePullBackOff   0          83m
+booking-service-staging-86ccdd4c-6pnjf   0/1     ErrImagePull       0          84m
+booking-service-staging-86ccdd4c-hx6hn   0/1     ErrImagePull       0          84m
+
+
+boss@tata:/mnt/c/Users/boss/Documents/Yandex/Sprint2/msa-sprint2/tasks/task4$ kubectl get services
+NAME                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+booking-service           ClusterIP   10.97.7.172      <none>        80/TCP    27m
+booking-service-dev       ClusterIP   10.106.109.192   <none>        80/TCP    84m
+booking-service-prod      ClusterIP   10.105.56.162    <none>        80/TCP    84m
+booking-service-staging   ClusterIP   10.106.157.93    <none>        80/TCP    84m
+kubernetes                ClusterIP   10.96.0.1        <none>        443/TCP   8h

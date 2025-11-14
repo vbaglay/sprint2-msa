@@ -1,0 +1,77 @@
+build  starting shell (build)
+build  $ docker build -t $IMAGE_NAME:latest ./booking-service
+build  > #0 building with "default" instance using docker driver
+build  >
+build  > #1 [internal] load build definition from Dockerfile
+build  > #1 transferring dockerfile: 843B done
+build  > #1 DONE 0.0s
+build  >
+build  > #2 [internal] load metadata for docker.io/library/golang:1.21-alpine
+build  > #2 DONE 0.5s
+build  >
+build  > #3 [internal] load .dockerignore
+build  > #3 transferring context: 2B done
+build  > #3 DONE 0.0s
+build  >
+build  > #4 [1/7] FROM docker.io/library/golang:1.21-alpine@sha256:2414035b086e3c42b99654c8b26e6f5b1b1598080d65fd03c7f499552ff4dc94
+build  > #4 DONE 0.0s
+build  >
+build  > #5 [internal] load build context
+build  > #5 transferring context: 887B done
+build  > #5 DONE 0.0s
+build  >
+build  > #6 [2/7] RUN apk add --no-cache curl
+build  > #6 CACHED
+build  >
+build  > #7 [5/7] COPY check-dns.sh .
+build  > #7 CACHED
+build  >
+build  > #8 [6/7] RUN chmod +x check-dns.sh
+build  > #8 CACHED
+build  >
+build  > #9 [3/7] WORKDIR /app
+build  > #9 CACHED
+build  >
+build  > #10 [4/7] COPY main.go .
+build  > #10 CACHED
+build  >
+build  > #11 [7/7] RUN go build -o booking-service main.go
+build  > #11 CACHED
+build  >
+build  > #12 exporting to image
+build  > #12 exporting layers done
+build  > #12 writing image sha256:6968122b52807ebbcbb433b4c27cdc8884275c7c5e130e1aa1769eb76f2c11a9 done
+build  > #12 naming to docker.io/library/booking-service:latest done
+build  > #12 DONE 0.0s
+build  finished in 930 ms
+test   starting shell (test)
+test   $ docker rm -f test-container || true
+test   > test-container
+test   $ docker run -d --name test-container -p 8080:8080 $IMAGE_NAME:latest
+test   > 49b0b2735c0a3d77ce6ea171c735a2a951133c17e4dcc2b052a78703868155d2
+test   $ sleep 3
+test   $ curl -f http://localhost:8080/ping
+test   >   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+test   >                                  Dload  Upload   Total   Spent    Left  Speed
+100     4  100     4    0     0   1236      0 --:--:-- --:--:-- --:--:--  1333
+test   > pong<gclShellPromptPlaceholder> docker stop test-container
+test   > test-container
+test   finished in 3.98 s
+deploy starting shell (deploy)
+deploy $ minikube image load $IMAGE_NAME:latest
+deploy > still running...
+deploy $ helm upgrade --install $HELM_RELEASE ./helm/booking-service --set image.tag=latest --set image.pullPolicy=Never
+deploy > Release "booking-service" has been upgraded. Happy Helming!
+deploy > NAME: booking-service
+deploy > LAST DEPLOYED: Sat Nov  8 23:56:44 2025
+deploy > NAMESPACE: default
+deploy > STATUS: deployed
+deploy > REVISION: 3
+deploy > TEST SUITE: None
+deploy $ echo "✅ Deployed with Helm"
+deploy > ✅ Deployed with Helm
+deploy finished in 15 s
+
+ PASS  build
+ PASS  test
+ PASS  deploy
