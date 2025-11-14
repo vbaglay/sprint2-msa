@@ -1,0 +1,272 @@
+docker-compose up --build
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.79kB 0.0s done
+#1 DONE 0.0s
+
+#2 [apollo-gateway internal] load build definition from Dockerfile
+#2 transferring dockerfile: 148B done
+#2 DONE 0.0s
+
+#3 [hotel-subgraph internal] load build definition from Dockerfile
+#3 transferring dockerfile: 148B done
+#3 DONE 0.0s
+
+#4 [booking-subgraph internal] load build definition from Dockerfile
+#4 transferring dockerfile: 148B done
+#4 DONE 0.0s
+
+#5 [booking-subgraph internal] load metadata for docker.io/library/node:18
+#5 DONE 0.6s
+
+#6 [hotel-subgraph internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [booking-subgraph internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.0s
+
+#8 [apollo-gateway internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [hotel-subgraph internal] load build context
+#9 transferring context: 91B done
+#9 DONE 0.0s
+
+#10 [apollo-gateway 1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783
+#10 resolve docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783 0.0s done
+#10 DONE 0.0s
+
+#11 [booking-subgraph internal] load build context
+#11 transferring context: 91B done
+#11 DONE 0.0s
+
+#12 [apollo-gateway internal] load build context
+#12 transferring context: 91B done
+#12 DONE 0.0s
+
+#13 [hotel-subgraph 2/5] WORKDIR /app
+#13 CACHED
+
+#14 [hotel-subgraph 4/5] RUN npm install
+#14 CACHED
+
+#15 [hotel-subgraph 3/5] COPY package.json ./
+#15 CACHED
+
+#16 [hotel-subgraph 5/5] COPY . .
+#16 CACHED
+
+#17 [booking-subgraph 3/5] COPY package.json ./
+#17 CACHED
+
+#18 [booking-subgraph 4/5] RUN npm install
+#18 CACHED
+
+#19 [booking-subgraph 5/5] COPY . .
+#19 CACHED
+
+#20 [apollo-gateway 3/5] COPY package.json ./
+#20 CACHED
+
+#13 [apollo-gateway 2/5] WORKDIR /app
+#13 CACHED
+
+#21 [apollo-gateway 4/5] RUN npm install
+#21 CACHED
+
+#22 [apollo-gateway 5/5] COPY . .
+#22 CACHED
+
+#23 [apollo-gateway] exporting to image
+#23 exporting layers done
+#23 exporting manifest sha256:dfcfa5ae9701638ba400ba4f1da0363f1f0de6fa6555a483a212ec869eea4378 done
+#23 exporting config sha256:e8a7f70d646260a066432b24b2e4c093b9ad9dd0dfa4b22daa46cf9a20e1682b done
+#23 exporting attestation manifest sha256:255701a696b8dae7633cb1937ad5bd612b14e072b6089515e8c676418dd153bc 0.1s done
+#23 exporting manifest list sha256:085c12b29e7c199f2a4325548bb3a55d9514d97c2878de7ff938f545ec11253f
+#23 exporting manifest list sha256:085c12b29e7c199f2a4325548bb3a55d9514d97c2878de7ff938f545ec11253f 0.0s done
+#23 naming to docker.io/library/task3-apollo-gateway:latest 0.0s done
+#23 unpacking to docker.io/library/task3-apollo-gateway:latest 0.0s done
+#23 DONE 0.3s
+
+#24 [hotel-subgraph] exporting to image
+#24 exporting layers done
+#24 exporting manifest sha256:e2993492b63fd535f7b8d8a9629458bcbe3e4ecca5fad76a46119944296b86f9 done
+#24 exporting config sha256:035492d4775f0a1e9266d6f635675d311563f0b034c8b0667534d77cdb79a39f 0.0s done
+#24 exporting attestation manifest sha256:7258df1e9daeb38e9dba2f7639d1ec3ed3be4be4ea7672b8e44c1494e2424dcb 0.1s done
+#24 exporting manifest list sha256:403d1ca20770af95b6648ce4e67f1f1e3168231951cdec1855bbdfdf04f4391d 0.0s done
+#24 naming to docker.io/library/task3-hotel-subgraph:latest done
+#24 unpacking to docker.io/library/task3-hotel-subgraph:latest 0.0s done
+#24 DONE 0.3s
+
+#25 [booking-subgraph] exporting to image
+#25 exporting layers done
+#25 exporting manifest sha256:fc54983666e975a736648cfea23e05f8cc7fa7d2f583ffcfec11934b4147ec46 done
+#25 exporting config sha256:bc22189abdf0f6c7f90fa7e046ff14ae9918d57d6baa3d4fc1ce0b0f0abc98fc 0.0s done
+#25 exporting attestation manifest sha256:859c2c84d608be9380985311d3f713e146f46b006e024fc333a83964d7b2f001 0.1s done
+#25 exporting manifest list sha256:307134791d059018b71d17259eb87687fd13608423183566e318750398a41934 0.0s done
+#25 naming to docker.io/library/task3-booking-subgraph:latest done
+#25 unpacking to docker.io/library/task3-booking-subgraph:latest 0.0s done
+#25 DONE 0.3s
+
+#26 [apollo-gateway] resolving provenance for metadata file
+#26 DONE 0.1s
+
+#27 [hotel-subgraph] resolving provenance for metadata file
+#27 DONE 0.1s
+
+#28 [booking-subgraph] resolving provenance for metadata file
+#28 DONE 0.0s
+docker-compose :  task3-booking-subgraph  Built
+At line:1 char:1
++ docker-compose up --build
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( task3-booking-subgraph  Built:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ task3-hotel-subgraph  Built
+ task3-apollo-gateway  Built
+ Container task3-hotel-subgraph-1  Recreate
+ Container task3-booking-subgraph-1  Recreate
+ Container task3-hotel-subgraph-1  Recreated
+ Container task3-booking-subgraph-1  Recreated
+ Container task3-apollo-gateway-1  Recreate
+ Container task3-apollo-gateway-1  Recreated
+Attaching to apollo-gateway-1, booking-subgraph-1, hotel-subgraph-1
+booking-subgraph-1  | Enabling inline tracing for this subgraph. To disable, use ApolloServerPluginInlineTraceDisabled.
+hotel-subgraph-1    | Enabling inline tracing for this subgraph. To disable, use ApolloServerPluginInlineTraceDisabled.
+hotel-subgraph-1    | вњ… Hotel subgraph ready at http://localhost:4002/
+booking-subgraph-1  | вњ… Booking subgraph ready at http://localhost:4001/
+apollo-gateway-1    | The `serviceList` option is deprecated and will be removed in a future version of `@apollo/gateway`. Please migrate to its replacement `IntrospectAndCompose`. More information on `IntrospectAndCompose` can be found in the documentation
+.
+apollo-gateway-1    | рџљЂ Gateway ready at http://localhost:4000/
+booking-subgraph-1  | === HEADERS RECEIVED ===
+booking-subgraph-1  | All headers: {
+booking-subgraph-1  |   'content-type': 'application/json',
+booking-subgraph-1  |   accept: '*/*',
+booking-subgraph-1  |   'accept-encoding': 'gzip, deflate, br, zstd',
+booking-subgraph-1  |   'accept-language': 'en-US,en;q=0.9',
+booking-subgraph-1  |   connection: 'keep-alive',
+booking-subgraph-1  |   'content-length': '111',
+booking-subgraph-1  |   host: 'localhost:4000',
+booking-subgraph-1  |   origin: 'https://studio.apollographql.com',
+booking-subgraph-1  |   'sec-ch-ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+booking-subgraph-1  |   'sec-ch-ua-mobile': '?0',
+booking-subgraph-1  |   'sec-ch-ua-platform': '"Windows"',
+booking-subgraph-1  |   'sec-fetch-dest': 'empty',
+booking-subgraph-1  |   'sec-fetch-mode': 'cors',
+booking-subgraph-1  |   'sec-fetch-site': 'cross-site',
+booking-subgraph-1  |   'sec-gpc': '1',
+booking-subgraph-1  |   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
+booking-subgraph-1  |   userid: 'xxxx'
+booking-subgraph-1  | }
+booking-subgraph-1  | UserID header: xxxx
+booking-subgraph-1  | =======================
+booking-subgraph-1  | === HEADERS RECEIVED ===
+booking-subgraph-1  | All headers: {
+booking-subgraph-1  |   'content-type': 'application/json',
+booking-subgraph-1  |   accept: '*/*',
+booking-subgraph-1  |   'accept-encoding': 'gzip, deflate, br, zstd',
+booking-subgraph-1  |   'accept-language': 'en-US,en;q=0.9',
+booking-subgraph-1  |   connection: 'keep-alive',
+booking-subgraph-1  |   'content-length': '111',
+booking-subgraph-1  |   host: 'localhost:4000',
+booking-subgraph-1  |   origin: 'https://studio.apollographql.com',
+booking-subgraph-1  |   'sec-ch-ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+booking-subgraph-1  |   'sec-ch-ua-mobile': '?0',
+booking-subgraph-1  |   'sec-ch-ua-platform': '"Windows"',
+booking-subgraph-1  |   'sec-fetch-dest': 'empty',
+booking-subgraph-1  |   'sec-fetch-mode': 'cors',
+booking-subgraph-1  |   'sec-fetch-site': 'cross-site',
+booking-subgraph-1  |   'sec-gpc': '1',
+booking-subgraph-1  |   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
+booking-subgraph-1  |   userid: 'user1'
+booking-subgraph-1  | }
+booking-subgraph-1  | UserID header: user1
+booking-subgraph-1  | =======================
+booking-subgraph-1  | === HEADERS RECEIVED ===
+booking-subgraph-1  | All headers: {
+booking-subgraph-1  |   'content-type': 'application/json',
+booking-subgraph-1  |   accept: '*/*',
+booking-subgraph-1  |   'accept-encoding': 'gzip, deflate, br, zstd',
+booking-subgraph-1  |   'accept-language': 'en-US,en;q=0.9',
+booking-subgraph-1  |   connection: 'keep-alive',
+booking-subgraph-1  |   'content-length': '111',
+booking-subgraph-1  |   host: 'localhost:4000',
+booking-subgraph-1  |   origin: 'https://studio.apollographql.com',
+booking-subgraph-1  |   'sec-ch-ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+booking-subgraph-1  |   'sec-ch-ua-mobile': '?0',
+booking-subgraph-1  |   'sec-ch-ua-platform': '"Windows"',
+booking-subgraph-1  |   'sec-fetch-dest': 'empty',
+booking-subgraph-1  |   'sec-fetch-mode': 'cors',
+booking-subgraph-1  |   'sec-fetch-site': 'cross-site',
+booking-subgraph-1  |   'sec-gpc': '1',
+booking-subgraph-1  |   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+booking-subgraph-1  | }
+booking-subgraph-1  | UserID header: undefined
+booking-subgraph-1  | =======================
+booking-subgraph-1  | === HEADERS RECEIVED ===
+booking-subgraph-1  | All headers: {
+booking-subgraph-1  |   'content-type': 'application/json',
+booking-subgraph-1  |   accept: '*/*',
+booking-subgraph-1  |   'accept-encoding': 'gzip, deflate, br, zstd',
+booking-subgraph-1  |   'accept-language': 'en-US,en;q=0.9',
+booking-subgraph-1  |   connection: 'keep-alive',
+booking-subgraph-1  |   'content-length': '111',
+booking-subgraph-1  |   host: 'localhost:4000',
+booking-subgraph-1  |   origin: 'https://studio.apollographql.com',
+booking-subgraph-1  |   'sec-ch-ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+booking-subgraph-1  |   'sec-ch-ua-mobile': '?0',
+booking-subgraph-1  |   'sec-ch-ua-platform': '"Windows"',
+booking-subgraph-1  |   'sec-fetch-dest': 'empty',
+booking-subgraph-1  |   'sec-fetch-mode': 'cors',
+booking-subgraph-1  |   'sec-fetch-site': 'cross-site',
+booking-subgraph-1  |   'sec-gpc': '1',
+booking-subgraph-1  |   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+booking-subgraph-1  | }
+booking-subgraph-1  | UserID header: undefined
+booking-subgraph-1  | =======================
+booking-subgraph-1  | === HEADERS RECEIVED ===
+booking-subgraph-1  | All headers: {
+booking-subgraph-1  |   'content-type': 'application/json',
+booking-subgraph-1  |   accept: '*/*',
+booking-subgraph-1  |   'accept-encoding': 'gzip, deflate, br, zstd',
+booking-subgraph-1  |   'accept-language': 'en-US,en;q=0.9',
+booking-subgraph-1  |   connection: 'keep-alive',
+booking-subgraph-1  |   'content-length': '111',
+booking-subgraph-1  |   host: 'localhost:4000',
+booking-subgraph-1  |   origin: 'https://studio.apollographql.com',
+booking-subgraph-1  |   'sec-ch-ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+booking-subgraph-1  |   'sec-ch-ua-mobile': '?0',
+booking-subgraph-1  |   'sec-ch-ua-platform': '"Windows"',
+booking-subgraph-1  |   'sec-fetch-dest': 'empty',
+booking-subgraph-1  |   'sec-fetch-mode': 'cors',
+booking-subgraph-1  |   'sec-fetch-site': 'cross-site',
+booking-subgraph-1  |   'sec-gpc': '1',
+booking-subgraph-1  |   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+booking-subgraph-1  | }
+booking-subgraph-1  | UserID header: undefined
+booking-subgraph-1  | =======================
+booking-subgraph-1  | === HEADERS RECEIVED ===
+booking-subgraph-1  | All headers: {
+booking-subgraph-1  |   'content-type': 'application/json',
+booking-subgraph-1  |   accept: '*/*',
+booking-subgraph-1  |   'accept-encoding': 'gzip, deflate, br, zstd',
+booking-subgraph-1  |   'accept-language': 'en-US,en;q=0.9',
+booking-subgraph-1  |   connection: 'keep-alive',
+booking-subgraph-1  |   'content-length': '111',
+booking-subgraph-1  |   host: 'localhost:4000',
+booking-subgraph-1  |   origin: 'https://studio.apollographql.com',
+booking-subgraph-1  |   'sec-ch-ua': '"Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"',
+booking-subgraph-1  |   'sec-ch-ua-mobile': '?0',
+booking-subgraph-1  |   'sec-ch-ua-platform': '"Windows"',
+booking-subgraph-1  |   'sec-fetch-dest': 'empty',
+booking-subgraph-1  |   'sec-fetch-mode': 'cors',
+booking-subgraph-1  |   'sec-fetch-site': 'cross-site',
+booking-subgraph-1  |   'sec-gpc': '1',
+booking-subgraph-1  |   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
+booking-subgraph-1  |   userid: 'user2'
+booking-subgraph-1  | }
+booking-subgraph-1  | UserID header: user2
+booking-subgraph-1  | =======================

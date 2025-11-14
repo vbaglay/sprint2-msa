@@ -1,0 +1,41 @@
+# values-v1.yaml - Конфигурация для версии v1
+replicaCount: 3
+
+image:
+  repository: booking-service
+  tag: latest
+  pullPolicy: Never
+
+service:
+  port: 8080
+  type: ClusterIP
+
+env:
+  VERSION: "v1"
+  ENABLE_FEATURE_X: "false"
+
+labels:
+  app: booking-service
+  version: v1
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
+
+readinessProbe:
+  httpGet:
+    path: /ping
+    port: 8080
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+livenessProbe:
+  httpGet:
+    path: /ping
+    port: 8080
+  initialDelaySeconds: 15
+  periodSeconds: 20

@@ -1,0 +1,47 @@
+# values-v2.yaml - Конфигурация для версии v2 с фичами
+replicaCount: 1
+
+image:
+  repository: booking-service
+  tag: latest
+  pullPolicy: Never
+
+service:
+  port: 8080
+  type: ClusterIP
+
+env:
+  VERSION: "v2"
+  ENABLE_FEATURE_X: "true"
+
+labels:
+  app: booking-service
+  version: v2
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
+
+readinessProbe:
+  httpGet:
+    path: /ping
+    port: 8080
+  initialDelaySeconds: 5
+  periodSeconds: 10
+
+livenessProbe:
+  httpGet:
+    path: /ping
+    port: 8080
+  initialDelaySeconds: 15
+  periodSeconds: 20
+
+# Дополнительные настройки для v2 с фичами
+featureFlags:
+  enabled: true
+  featureX: true
+  newEndpoint: "/feature"
